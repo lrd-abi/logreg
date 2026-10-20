@@ -24,13 +24,28 @@ cc["TechSupport"]=cc["TechSupport"].replace({"Yes":1,"No":0,"No internet service
 
 
 
-check=cc.apply(pd.unique)
+cc=pd.get_dummies(cc,columns=["MultipleLines",'InternetService','OnlineSecurity','OnlineBackup',"DeviceProtection",'TechSupport','StreamingTV','StreamingMovies','Contract',"PaymentMethod"],drop_first=True,dtype=int)
 
-print
+tenure=np.array(cc["tenure"])
+MonthlyCharges=np.array(cc["MonthlyCharges"])
+TotalCharges=np.array(cc["TotalCharges"])
+
+col=[tenure,MonthlyCharges,TotalCharges]
+scaled=[]
+x=cc["tenure"].apply(type)
+print(x)
+#for i in x:
+    #if i.dty
 
 
+#for i in col:
+    #mean = np.mean(i)
+    #std=np.std(i)
+    #scaled.append((i-mean)/std)
+    
 
 
+#print(cc.apply(pd.unique))
 
 
 
